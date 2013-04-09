@@ -31,7 +31,7 @@ package LOFT_Interface_Pkg is
 
 	-- PBEE -> MBEE DATA starts with 0001
 	constant HEADER_PBEE             : std_logic_vector := "0001";
-	constant HEADER_PBEE_CONFIG_STOR : std_logic_vector := "00010001"; -- pbee header example (following packets contain full set of configuration data)
+	constant HEADER_PBEE_CONFIG_STOR : std_logic_vector := "00010001"; -- pbee header for configuration packets
 	constant HEADER_PBEE_DATA        : std_logic_vector := "00010010"; -- pbee header example (configuration data)
 	constant HEADER_PBEE_FIRE        : std_logic_vector := "00011111"; -- pbee header example (pbee is on fire)
 
