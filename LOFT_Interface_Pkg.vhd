@@ -25,11 +25,13 @@ package LOFT_Interface_Pkg is
 	-- MBEE -> PBEE DATA starts with 0000
 	constant HEADER_MBEEE            : std_logic_vector := "0000";
 	constant HEADER_MBEE_EVENT       : std_logic_vector := "00000001"; -- mbee header example (standard event)
+	constant HEADER_MBEE_DUMMY       : std_logic_vector := "00000010"; -- mbee header example (standard event)
+	constant PACKET_MBEE_DUMMY       : std_logic_vector := "0000001000000000000000001111111111111111"; -- mbee header example (standard event)
 	constant HEADER_MBEE_FIRE        : std_logic_vector := "00001111"; -- mbee header example (mbee is on fire)
 
 	-- PBEE -> MBEE DATA starts with 0001
 	constant HEADER_PBEE             : std_logic_vector := "0001";
-	constant HEADER_PBEE_CONFIG      : std_logic_vector := "00010001"; -- pbee header example (following packets contain full set of configuration data)
+	constant HEADER_PBEE_CONFIG_STOR : std_logic_vector := "00010001"; -- pbee header example (following packets contain full set of configuration data)
 	constant HEADER_PBEE_DATA        : std_logic_vector := "00010010"; -- pbee header example (configuration data)
 	constant HEADER_PBEE_FIRE        : std_logic_vector := "00011111"; -- pbee header example (pbee is on fire)
 
@@ -59,6 +61,6 @@ package LOFT_Interface_Pkg is
 	-- it start's waiting for a trigger.
 	-- to avoid interpreting a high impedance line
 	-- this "wait"-step is delayed for some clock cycles.
-	constant INT_SENDER_RECEIVER_WAIT_DELAY : integer := 5;
+	constant INT_SENDER_RECEIVER_WAIT_DELAY : integer := 2;
 
 end package;
